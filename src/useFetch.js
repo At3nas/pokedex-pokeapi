@@ -4,18 +4,27 @@ export const useFetch = () => {
     // API's URL
     const url = "https://pokeapi.co/api/v2/pokemon/";
 
-    // Stores data retrieved by fetch 
+    // Stores the data retrieved by fetch 
     const [data, setData] = useState(null);
 
-    // Stores errors encountered while fetching data
+    // Stores any error encountered while fetching data
     const [error, setError] = useState(null);
+
+    // Validates if the fetching is pending
+    const [loading, setLoading] = useState(true);
 
     // Stores abortController, so it can be accessed outside the useEffect
     const [controller, setController] = useState(null);
 
     useEffect(() => {
+        // Creates an AbortController, so the fetch can stop if the component was dismounted
+        const abortController = new AbortController();
+        setController(abortController);
 
-        fetch(url)
+        // Sets the Loading's useState to true just in case the value has changed
+        setLoading(true);
+
+        fetch(url, { signal: abortController.signal })
             .then((resp) => resp.json())
             .then((data) => data.results)
             .then((pokemonList) => {
@@ -26,7 +35,17 @@ export const useFetch = () => {
                 // Solves all the promises returned previously and set the obtained data
                 Promise.all(getPokemonData).then((pokemonData) => setData(pokemonData));
             })
-            .catch((err) => console.log(err));
+            .finally(setLoading(false))
+            .catch((err) => {
+                if (err.name == "AbortError") {
+                    console.log("The request was cancelled.")
+                } else {
+                    setError(err);
+                    console.log(error);
+                }
+            });
+
+        return () => abortController.abort();
     }, [])
 
     return { data, error };
