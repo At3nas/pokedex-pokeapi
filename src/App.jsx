@@ -1,24 +1,42 @@
+import { useState } from 'react';
 import { useFetch } from './useFetch';
-import './styles/App.css';
 import { PokemonList } from './components/PokemonList';
+import { PokemonSprite } from './components/PokemonSprite';
+import './styles/App.css';
 
 export const App = () => {
-  const { data, error } = useFetch();
+    const { data, error } = useFetch();
+    const [selectedPokemon, setSelectedPokemon] = useState('bulbasaur');
 
-  return (
-    <div className="container">
-      <h1>Pokedex</h1>
-      <main className="main-content">
+    // Gets the Pokemon's sprite to be displayed
+    function getPokemonSprite() {
+        let pokemonId = 0;
+        // iterates the data
+        if (data != null) {
+            data.forEach(pokemon => {
+                if (pokemon.name == selectedPokemon) {
+                    pokemonId = pokemon.id;
+                }
+            });
+        }
+        return pokemonId;
+    }
 
-        <aside className="pokemon-sprite-container">
+    return (
+        <div className="container">
+            <h1>Pokedex</h1>
+            <main className="main-content">
 
-        </aside>
-        <section className="pokemon-list-container">
-          <select size={10}>
-            {data && data.map(pokemon => <PokemonList key={pokemon.id} name={pokemon.name} />)}
-          </select>
-        </section>
-      </main>
-    </div>
-  )
+                <aside className="pokemon-sprite-container">
+                    <PokemonSprite pokeId={getPokemonSprite()} />
+
+                </aside>
+                <section className="pokemon-list-container">
+                    <select size={10} onChange={(e => setSelectedPokemon(e.target.value))} autoFocus>
+                        {data && data.map(pokemon => <PokemonList key={pokemon.id} name={pokemon.name} />)}
+                    </select>
+                </section>
+            </main>
+        </div>
+    )
 }

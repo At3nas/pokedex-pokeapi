@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export const PokemonList = ({ name }) => {
     return (
-        <option>{name}</option>
+        <option value={name}>{name}</option>
     );
 }
 
