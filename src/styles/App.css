@@ -1,14 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-h1 {
-  visibility: hidden;
+  border: 1px solid black;
 }
 
 .main-content {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,18 +19,27 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   height: 400px;
   width: 400px;
 }
+.main-content .pokemon-sprite-container .pokemon-sprite {
+  scale: 4;
+  image-rendering: pixelated;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 .main-content .pokemon-list-container {
-  border: 1px solid black;
   height: 400px;
   width: 600px;
 }
 .main-content .pokemon-list-container select {
   width: 100%;
   height: 100%;
+}
+.main-content .pokemon-list-container select option {
+  font-family: "VT323";
+  text-transform: uppercase;
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=App.css.map */

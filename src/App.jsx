@@ -23,10 +23,8 @@ export const App = () => {
     }
 
     return (
-        <div className="container">
-            <h1>Pokedex</h1>
+        <>
             <main className="main-content">
-
                 <aside className="pokemon-sprite-container">
                     <PokemonSprite pokeId={getPokemonSprite()} />
 
@@ -37,6 +35,6 @@ export const App = () => {
                     </select>
                 </section>
             </main>
-        </div>
+        </>
     )
 }
