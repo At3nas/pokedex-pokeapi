@@ -1,18 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid black;
 }
 
-.main-content {
+html {
   height: 100vh;
   width: 100vw;
+}
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
   gap: 20px;
 }
 .main-content .pokemon-sprite-container {
@@ -23,7 +33,7 @@
   width: 400px;
 }
 .main-content .pokemon-sprite-container .pokemon-sprite {
-  scale: 4;
+  scale: 2.5;
   image-rendering: pixelated;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);

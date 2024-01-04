@@ -1,32 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@mixin centerElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid black;
+
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  @include centerElement;
+  flex-direction: column;
 }
 
 .main-content {
+  @include centerElement;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
 
   .pokemon-sprite-container {
     //border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include centerElement;
     height: 400px;
     width: 400px;
 
     .pokemon-sprite {
-      scale: 4;
+      scale: 2.5;
       image-rendering: pixelated;
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
