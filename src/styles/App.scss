@@ -3,62 +3,62 @@
 
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-content {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  .pokemon-sprite-container {
+    //border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    height: 400px;
+    width: 400px;
 
-    .pokemon-sprite-container {
-        //border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 400px;
-        width: 400px;
-
-        .pokemon-sprite {
-            scale: 4;
-            image-rendering: pixelated;
-            -webkit-transform: scaleX(-1);
-            transform: scaleX(-1);
-        }
+    .pokemon-sprite {
+      scale: 4;
+      image-rendering: pixelated;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
     }
+  }
 
-    .pokemon-list-container {
-        //border: 1px solid black;
-        height: 400px;
-        width: 600px;
+  .pokemon-list-container {
+    //border: 1px solid black;
+    height: 400px;
+    width: 600px;
 
-        select {
-            width: 100%;
-            height: 100%;
+    select {
+      width: 100%;
+      height: 100%;
 
-            &::-webkit-scrollbar {
-                width: 10px;
+      &::-webkit-scrollbar {
+        width: 10px;
 
-                &-track {
-                    background-color: rgb(160, 168, 166);
-                }
-
-                &-thumb {
-                    background-color: rgb(255, 149, 149);
-                }
-            }
-
-            option {
-                font-family: 'Silkscreen';
-                text-transform: uppercase;
-                font-size: 20px;
-            }
+        &-track {
+          background-color: rgb(160, 168, 166);
         }
+
+        &-thumb {
+          background-color: rgb(255, 149, 149);
+        }
+      }
+
+      option {
+        font-family: 'Silkscreen';
+        text-transform: uppercase;
+        font-size: 20px;
+      }
     }
+  }
 }
