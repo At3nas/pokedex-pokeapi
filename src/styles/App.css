@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 .main-content .pokemon-sprite-container {
   display: flex;
@@ -36,10 +36,19 @@
   width: 100%;
   height: 100%;
 }
+.main-content .pokemon-list-container select::-webkit-scrollbar {
+  width: 10px;
+}
+.main-content .pokemon-list-container select::-webkit-scrollbar-track {
+  background-color: rgb(160, 168, 166);
+}
+.main-content .pokemon-list-container select::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 149, 149);
+}
 .main-content .pokemon-list-container select option {
-  font-family: "VT323";
+  font-family: "Silkscreen";
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */

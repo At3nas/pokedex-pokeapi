@@ -10,7 +10,7 @@ export const App = () => {
 
     // Gets the Pokemon's sprite to be displayed
     function getPokemonSprite() {
-        let pokemonId = 0;
+        let pokemonId = 1;
         // iterates the data
         if (data != null) {
             data.forEach(pokemon => {
@@ -31,7 +31,7 @@ export const App = () => {
                 </aside>
                 <section className="pokemon-list-container">
                     <select size={10} onChange={(e => setSelectedPokemon(e.target.value))} autoFocus>
-                        {data && data.map(pokemon => <PokemonList key={pokemon.id} name={pokemon.name} />)}
+                        {data && data.map(pokemon => <PokemonList key={pokemon.id} name={pokemon.name} id={pokemon.id} />)}
                     </select>
                 </section>
             </main>

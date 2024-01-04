@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 
     .pokemon-sprite-container {
         //border: 1px solid black;
@@ -42,10 +42,22 @@
             width: 100%;
             height: 100%;
 
+            &::-webkit-scrollbar {
+                width: 10px;
+
+                &-track {
+                    background-color: rgb(160, 168, 166);
+                }
+
+                &-thumb {
+                    background-color: rgb(255, 149, 149);
+                }
+            }
+
             option {
-                font-family: 'VT323';
+                font-family: 'Silkscreen';
                 text-transform: uppercase;
-                font-size: 30px;
+                font-size: 20px;
             }
         }
     }
