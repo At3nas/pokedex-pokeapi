@@ -3,9 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 1px solid black;
 }
 
-html {
+html,
+.container {
   height: 100vh;
   width: 100vw;
 }
@@ -19,28 +21,32 @@ html {
 
 .main-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
+  height: 70%;
+  width: 80%;
   gap: 20px;
 }
-.main-content .pokemon-sprite-container {
+.main-content .pokemon-sprite-info-container {
+  display: block;
+  height: 100%;
+  width: 60%;
+}
+.main-content .pokemon-sprite-info-container .pokemon-info-container {
+  height: 40%;
+}
+.main-content .pokemon-sprite-info-container .pokemon-sprite-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
-  width: 400px;
+  height: 60%;
 }
-.main-content .pokemon-sprite-container .pokemon-sprite {
-  scale: 2.5;
+.main-content .pokemon-sprite-info-container .pokemon-sprite-container .pokemon-sprite {
+  scale: 2.3;
   image-rendering: pixelated;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 .main-content .pokemon-list-container {
-  height: 400px;
-  width: 600px;
+  width: 40%;
 }
 .main-content .pokemon-list-container select {
   width: 100%;
