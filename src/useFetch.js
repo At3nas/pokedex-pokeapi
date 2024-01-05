@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const useFetch = () => {
   // API's URL
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=150";
+  const url = "https://pokeapi.co/api/v2/pokemon?limit=151";
 
   // Stores the data retrieved by fetch 
   const [data, setData] = useState(null);

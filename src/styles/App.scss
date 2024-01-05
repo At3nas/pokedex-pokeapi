@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
+$color-type-bug: #8A9910;
+$color-type-dragon: #735CD8;
+$color-type-electric: #FCB915;
+$color-type-fighting: #753320;
+$color-type-fire: #D82F06;
+$color-type-flying: #8CA2ED;
+$color-type-ghost: #5C5CB0;
+$color-type-grass: #6DBF31;
+$color-type-ground: #CDAF53;
+$color-type-ice: #72D4F5;
+$color-type-normal: #C5C0B6;
+$color-type-poison: #913F8F;
+$color-type-psychic: #E74A81;
+$color-type-rock: #B79E57;
+$color-type-water: #3599FB;
+
+
 @mixin centerElement {
   display: flex;
   justify-content: center;
@@ -11,41 +28,58 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid black;
+  font-family: 'Silkscreen';
+  //border: 1px solid black;
 }
 
 html,
-.container {
+#root {
   height: 100vh;
   width: 100vw;
 }
 
-.container {
+#root {
   @include centerElement;
   flex-direction: column;
 }
 
-.main-content {
+.gba-bg-container {
+  @include centerElement;
+  height: 70vh;
+  width: 90vw;
+  border: 10px solid black;
+  border-radius: 20px 20px 80px 80px;
+}
+
+.screen {
+  border: 5px solid black;
   display: flex;
-  height: 70%;
-  width: 80%;
-  gap: 20px;
+  height: 80%;
+  width: 60%;
 
   .pokemon-sprite-info-container {
     display: block;
     height: 100%;
-    width: 60%;
+    width: 50%;
 
     .pokemon-info-container {
+      margin: 30px 10px;
       height: 40%;
+
+      ul {
+        list-style: none;
+
+      }
     }
 
     .pokemon-sprite-container {
       @include centerElement;
+      padding: 20px;
       height: 60%;
 
       .pokemon-sprite {
-        scale: 2.3;
+        scale: 2;
+        height: 50%;
         image-rendering: pixelated;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
@@ -55,7 +89,28 @@ html,
   }
 
   .pokemon-list-container {
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .generation-selector {
+      height: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+
+
+
+      .btn-gen-selector {
+        border: none;
+        background-color: transparent;
+        height: 40px;
+        width: 40px;
+
+      }
+
+    }
 
     select {
       width: 100%;
@@ -74,9 +129,8 @@ html,
       }
 
       option {
-        font-family: 'Silkscreen';
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
