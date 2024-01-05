@@ -1,20 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
-$color-type-bug: #8A9910;
-$color-type-dragon: #735CD8;
-$color-type-electric: #FCB915;
-$color-type-fighting: #753320;
-$color-type-fire: #D82F06;
-$color-type-flying: #8CA2ED;
-$color-type-ghost: #5C5CB0;
-$color-type-grass: #6DBF31;
-$color-type-ground: #CDAF53;
-$color-type-ice: #72D4F5;
-$color-type-normal: #b1aca2;
-$color-type-poison: #913F8F;
-$color-type-psychic: #E74A81;
-$color-type-rock: #B79E57;
-$color-type-water: #3599FB;
+
 
 @mixin centerElement {
   display: flex;
@@ -57,80 +43,18 @@ html,
     .pokemon-info-container {
 
       ul {
-
         display: flex;
         flex-direction: column;
         gap: 10px;
         margin: 10px;
         list-style: none;
 
-        .type-tag {
-          @include centerElement;
-          width: 70px;
-          height: 30px;
-          border-radius: 20px;
-          font-size: 12px;
-          color: white;
-          margin-top: 5px;
+        li {
+          display: flex;
 
-          &.bug {
-            background-color: $color-type-bug;
-          }
-
-          &.dragon {
-            background-color: $color-type-dragon;
-          }
-
-          &.electric {
-            background-color: $color-type-electric;
-          }
-
-          &.fighting {
-            background-color: $color-type-fighting;
-          }
-
-          &.fire {
-            background-color: $color-type-fire;
-          }
-
-          &.flying {
-            background-color: $color-type-flying;
-          }
-
-          &.ghost {
-            background-color: $color-type-ghost;
-          }
-
-          &.grass {
-            background-color: $color-type-grass;
-          }
-
-          &.ground {
-            background-color: $color-type-ground;
-          }
-
-          &.ice {
-            background-color: $color-type-ice;
-          }
-
-          &.normal {
-            background-color: $color-type-normal;
-          }
-
-          &.poison {
-            background-color: $color-type-poison;
-          }
-
-          &.psychic {
-            background-color: $color-type-psychic;
-          }
-
-          &.rock {
-            background-color: $color-type-rock;
-          }
-
-          &.water {
-            background-color: $color-type-water;
+          b {
+            @include centerElement;
+            margin-right: 10px;
           }
         }
       }

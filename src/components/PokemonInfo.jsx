@@ -16,7 +16,7 @@ export const PokemonInfo = ({ pokemon }) => {
         <ul className="pokemon-info-list">
           <li><b>ID:</b> {formatId(pkmn.id)}</li>
           <li><b>Name:</b> {pkmn.name}</li>
-          <li><b>Type:</b> <PokemonType type={pkmn.types[0]['type']['name']} /></li>
+          <li><b>Type:</b> <div className="type-container">{(pkmn.types).map(type => <PokemonType key={type.type.name} type={type.type.name} />)}</div></li>
           <li><b>Ability:</b> {pkmn.abilities[0]['ability']['name']}</li>
         </ul>
       </section>
