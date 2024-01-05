@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import '../styles/App.css';
 
 export const PokemonType = ({ type }) => {
   return (

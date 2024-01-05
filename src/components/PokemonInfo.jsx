@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { formatId } from '../utils';
+import { PokemonType } from './PokemonType';
+
 
 export const PokemonInfo = ({ pokemon }) => {
   let pkmn = pokemon[0];
@@ -12,10 +14,10 @@ export const PokemonInfo = ({ pokemon }) => {
       </div>
       <section className="pokemon-info-container">
         <ul className="pokemon-info-list">
-          <li>ID: {formatId(pkmn.id)}</li>
-          <li>Name: {pkmn.name}</li>
-          <li>Type: {pkmn.types[0]['type']['name']}</li>
-          <li>Ability: {pkmn.abilities[0]['ability']['name']}</li>
+          <li><b>ID:</b> {formatId(pkmn.id)}</li>
+          <li><b>Name:</b> {pkmn.name}</li>
+          <li><b>Type:</b> <PokemonType type={pkmn.types[0]['type']['name']} /></li>
+          <li><b>Ability:</b> {pkmn.abilities[0]['ability']['name']}</li>
         </ul>
       </section>
     </>
