@@ -5,28 +5,22 @@ import { PokemonInfo } from './components/PokemonInfo';
 import './styles/App.css';
 
 export const App = () => {
-  const { data, error, loading } = useFetch();
+  const { data } = useFetch("https://pokeapi.co/api/v2/pokemon?limit=151");
   const [selectedPokemon, setSelectedPokemon] = useState('bulbasaur');
 
-  // Gets the Pokemon's information to be displayed
-  function getPokemonInfo() {
-    let pokemonData = [];
-
+  // Gets the Pokemon's list to be displayed on select
+  function getPokemonList() {
     if (data != null) {
-      data.forEach(pokemon => {
-        if (pokemon.name == selectedPokemon) {
-          pokemonData.push(pokemon);
-        }
-      });
+      return data.results;
     }
-    return pokemonData;
   }
+
 
   return (
     <>
       <main className="main-content">
         <aside className="pokemon-sprite-info-container">
-          {data && <PokemonInfo pokemon={getPokemonInfo()} />}
+          {data && <PokemonInfo pokemonSelected={selectedPokemon} />}
         </aside>
 
         <section className="pokemon-list-container">
@@ -40,7 +34,7 @@ export const App = () => {
             </button>
           </div>
           <select size={10} onChange={(e => setSelectedPokemon(e.target.value))}>
-            {data && data.map(pokemon => <PokemonList key={pokemon.id} name={pokemon.name} id={pokemon.id} />)}
+            {data && (getPokemonList()).map(pokemon => <PokemonList key={pokemon.name} name={pokemon.name} />)}
           </select>
 
         </section>

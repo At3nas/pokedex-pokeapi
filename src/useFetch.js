@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useFetch = () => {
-  // API's URL
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=151";
-
+export const useFetch = (url) => {
   // Stores the data retrieved by fetch 
   const [data, setData] = useState(null);
 
@@ -26,15 +23,7 @@ export const useFetch = () => {
 
     fetch(url, { signal: abortController.signal })
       .then((resp) => resp.json())
-      .then((data) => data.results)
-      .then((pokemonList) => {
-        // Iterates the Pokemon's list and returns a promise for each element
-        const getPokemonData = pokemonList.map(pokemon => {
-          return fetch(pokemon.url).then((resp) => resp.json());
-        });
-        // Solves all the promises returned previously and set the obtained data
-        Promise.all(getPokemonData).then((pokemonData) => setData(pokemonData));
-      })
+      .then((pokemonData) => setData(pokemonData))
       .finally(setLoading(false))
       .catch((err) => {
         if (err.name == "AbortError") {
@@ -46,7 +35,7 @@ export const useFetch = () => {
       });
 
     return () => abortController.abort();
-  }, [])
+  }, [url])
 
   return { data, error, loading };
 
