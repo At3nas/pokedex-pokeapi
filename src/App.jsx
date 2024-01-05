@@ -24,7 +24,7 @@ export const App = () => {
 
   return (
     <>
-      <main className="screen">
+      <main className="main-content">
         <aside className="pokemon-sprite-info-container">
           {data && <PokemonInfo pokemon={getPokemonInfo()} />}
         </aside>

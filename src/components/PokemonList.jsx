@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import { formatId } from '../utils';
 
-export const PokemonList = ({ name, id }) => {
+export const PokemonList = ({ name }) => {
   return (
     <>
-      <option value={name}>N°.{formatId(id)} {name}</option>
+      <option value={name}>{name}</option>
     </>
   );
 }

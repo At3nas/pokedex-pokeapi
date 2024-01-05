@@ -43,19 +43,11 @@ html,
   flex-direction: column;
 }
 
-.gba-bg-container {
-  @include centerElement;
-  height: 70vh;
-  width: 90vw;
-  border: 10px solid black;
-  border-radius: 20px 20px 80px 80px;
-}
-
-.screen {
+.main-content {
   border: 5px solid black;
   display: flex;
   height: 80%;
-  width: 60%;
+  width: 90%;
 
   .pokemon-sprite-info-container {
     display: block;
@@ -78,8 +70,8 @@ html,
       height: 60%;
 
       .pokemon-sprite {
-        scale: 2;
-        height: 50%;
+        min-width: 10%;
+        scale: 2.4;
         image-rendering: pixelated;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
@@ -97,7 +89,7 @@ html,
       height: 15%;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-evenly;
 
 
 
