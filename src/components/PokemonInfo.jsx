@@ -1,24 +1,15 @@
 import PropTypes from 'prop-types';
-import { useFetch } from '../useFetch';
 import { formatId } from '../utils';
 import { PokemonType } from './PokemonType';
 
 
-export const PokemonInfo = ({ pokemonSelected }) => {
-  const { data: pokemon } = useFetch(`https://pokeapi.co/api/v2/pokemon/${pokemonSelected}`);
-
-  function getPokemonSprite() {
-    let sprite = null;
-    if (pokemon != null) {
-      sprite = pokemon['sprites']['versions']['generation-v']['black-white']['animated'].front_default;
-    }
-    return sprite;
-  }
+export const PokemonInfo = ({ pokemon }) => {
+  const sprite = pokemon['sprites']['versions']['generation-v']['black-white']['animated'].front_default;
 
   return (
     <>
       <div className="pokemon-sprite-container">
-        {pokemon && <img src={getPokemonSprite()} className="pokemon-sprite" alt="Pokemon sprite" />}
+        {pokemon && <img src={sprite} className="pokemon-sprite" alt="Pokemon sprite" />}
       </div>
       <section className="pokemon-info-container">
         {pokemon && (
@@ -35,5 +26,5 @@ export const PokemonInfo = ({ pokemonSelected }) => {
 }
 
 PokemonInfo.propTypes = {
-  pokemonSelected: PropTypes.string
+  pokemon: PropTypes.object
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useFetch = (url) => {
+
   // Stores the data retrieved by fetch 
   const [data, setData] = useState(null);
 
@@ -23,7 +24,15 @@ export const useFetch = (url) => {
 
     fetch(url, { signal: abortController.signal })
       .then((resp) => resp.json())
-      .then((pokemonData) => setData(pokemonData))
+      .then((data) => data.results)
+      .then((pokemonList) => {
+        const getPokemonData = pokemonList.map(pokemon => {
+          return fetch(pokemon.url)
+            .then((resp) => resp.json())
+        })
+        Promise.all(getPokemonData)
+          .then((pokemonData) => setData(pokemonData))
+      })
       .finally(setLoading(false))
       .catch((err) => {
         if (err.name == "AbortError") {
@@ -33,6 +42,7 @@ export const useFetch = (url) => {
           console.log(error);
         }
       });
+
 
     return () => abortController.abort();
   }, [url])
