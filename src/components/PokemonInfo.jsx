@@ -8,17 +8,19 @@ export const PokemonInfo = ({ pokemon }) => {
 
   return (
     <>
-      <div className="pokemon-sprite-container-border">
-        <div className="pokemon-sprite-container">
-          {pokemon && <img src={sprite} className="pokemon-sprite" alt="Pokemon sprite" />}
+      <section className="pokemon-sprite-container">
+        <div className="pokemon-sprite-border">
+          <div className="pokemon-sprite-screen">
+            {pokemon && <img src={sprite} className="pokemon-sprite" alt="Pokemon sprite" />}
+          </div>
         </div>
-      </div>
+      </section>
       <section className="pokemon-info-container">
         {pokemon && (
           <ul className="pokemon-info-list">
             <li><b>ID:</b> {formatId(pokemon.id)}</li>
             <li><b>Name:</b> {pokemon.name}</li>
-            <li><b>Type:</b> <div className="type-container">{(pokemon.types).map(type => <PokemonType key={type.type.name} type={type.type.name} />)}</div></li>
+            <li><b className="type-title">Type:</b> {(pokemon.types).map(type => <PokemonType key={type.type.name} type={type.type.name} />)}</li>
             <li><b>Ability:</b> {pokemon.abilities[0]['ability']['name']}</li>
           </ul>
         )}

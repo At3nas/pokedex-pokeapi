@@ -3,7 +3,9 @@ import '../styles/PokemonType.css';
 
 export const PokemonType = ({ type }) => {
   return (
-    <div className={"type-tag " + type}> {type} </div>
+    <div className="type-container">
+      <div className={"type-tag " + type}> {type} </div>
+    </div >
   )
 }
 

@@ -18,10 +18,15 @@ $color-type-water: #3599FB;
 $color-type-fairy: #F1AFF3;
 $color-type-steel: #9999A9;
 
-.type-container {
+.type-title {
   @include app.center;
+}
+
+.type-container {
+  display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
+  width: fit-content;
 
   .type-tag {
     @include app.center;
