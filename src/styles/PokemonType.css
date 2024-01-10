@@ -24,8 +24,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 90%;
+  height: 100vh;
+  width: 90vw;
 }
 main .pokemon-card-container {
   background-color: #ff6d94;
@@ -47,7 +47,6 @@ main .pokemon-card-container .pokemon-sprite-container-border {
   border-radius: 20px 20px 20px 60px;
   background-color: antiquewhite;
   width: 250px;
-  height: 250px;
   margin: 20px;
 }
 main .pokemon-card-container .pokemon-sprite-container-border .pokemon-sprite-container {
@@ -149,6 +148,7 @@ select::-webkit-scrollbar-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .type-container .type-tag {
@@ -158,7 +158,7 @@ select::-webkit-scrollbar-button {
   width: 70px;
   height: 25px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 0.8em;
   color: white;
   margin-top: 5px;
 }

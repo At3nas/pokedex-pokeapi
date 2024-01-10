@@ -21,6 +21,7 @@ $color-screen: #98d9e9;
   border: 5px solid $color-shadow;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -36,17 +37,15 @@ html,
 }
 
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
   flex-direction: column;
   background: linear-gradient(360deg, rgba(255, 255, 255, 1) 40%, rgb(255, 169, 192) 80%);
 }
 
 main {
   @include center;
-  height: 100%;
-  width: 90%;
+  height: 100vh;
+  width: 90vw;
 
   .pokemon-card-container {
     background-color: $color-pokedex;
@@ -67,7 +66,6 @@ main {
       border-radius: 20px 20px 20px 60px;
       background-color: antiquewhite;
       width: 250px;
-      height: 250px;
       margin: 20px;
 
       .pokemon-sprite-container {

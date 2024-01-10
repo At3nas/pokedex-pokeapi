@@ -20,6 +20,7 @@ $color-type-steel: #9999A9;
 
 .type-container {
   @include app.center;
+  flex-wrap: wrap;
   gap: 10px;
 
   .type-tag {
@@ -27,7 +28,7 @@ $color-type-steel: #9999A9;
     width: 70px;
     height: 25px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 0.8em;
     color: white;
     margin-top: 5px;
 
