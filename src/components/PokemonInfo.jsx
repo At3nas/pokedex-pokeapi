@@ -8,8 +8,10 @@ export const PokemonInfo = ({ pokemon }) => {
 
   return (
     <>
-      <div className="pokemon-sprite-container">
-        {pokemon && <img src={sprite} className="pokemon-sprite" alt="Pokemon sprite" />}
+      <div className="pokemon-sprite-container-border">
+        <div className="pokemon-sprite-container">
+          {pokemon && <img src={sprite} className="pokemon-sprite" alt="Pokemon sprite" />}
+        </div>
       </div>
       <section className="pokemon-info-container">
         {pokemon && (
