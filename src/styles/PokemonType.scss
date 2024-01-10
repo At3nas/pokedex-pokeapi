@@ -15,13 +15,15 @@ $color-type-poison: #913F8F;
 $color-type-psychic: #E74A81;
 $color-type-rock: #B79E57;
 $color-type-water: #3599FB;
+$color-type-fairy: #F1AFF3;
+$color-type-steel: #9999A9;
 
 .type-container {
-  @include app.centerElement;
+  @include app.center;
   gap: 10px;
 
   .type-tag {
-    @include app.centerElement;
+    @include app.center;
     width: 70px;
     height: 25px;
     border-radius: 20px;
@@ -87,6 +89,14 @@ $color-type-water: #3599FB;
 
     &.water {
       background-color: $color-type-water;
+    }
+
+    &.fairy {
+      background-color: $color-type-fairy;
+    }
+
+    &.steel {
+      background-color: $color-type-steel;
     }
   }
 }
